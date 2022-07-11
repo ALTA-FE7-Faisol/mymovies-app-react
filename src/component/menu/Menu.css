@@ -1,0 +1,25 @@
+.header{
+    height: 80px;
+    position: fixed;
+    background-color: #343a40;
+    width: 100%;
+    border-bottom: solid red;
+}
+
+.header img {
+    width: 25px;
+    height: auto;
+}
+
+.header ul li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 20px;
+}
+.header li a{
+    font-size: 25px;
+    text-decoration: none;
+    font-style: normal;
+    color:white;
+    font-weight: bold;
+}
