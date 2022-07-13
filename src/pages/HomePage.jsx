@@ -14,12 +14,10 @@ class HomePage extends Component {
     loading: false,
   };
 
-  // side effect
   async componentDidMount() {
     await this.fetchData();
   }
 
-  // ini fungsi yang dijalankan ketika component dimuat
   async fetchData() {
     this.setState({ loading: true });
     await axios
