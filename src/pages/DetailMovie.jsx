@@ -18,13 +18,9 @@ class DetailMovie extends Component {
     this.setState({ loading: true });
     const { movie_id } = this.props.params;
     await axios
-<<<<<<< HEAD
       .get(
         `https://api.themoviedb.org/3/movie/${movie_id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
       )
-=======
-      .get(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`)
->>>>>>> ffd44c6deee439a722c416e0316d1edf3c53a5f0
       .then((response) => {
         const { data } = response;
         this.setState({ DetailMovie: data });
