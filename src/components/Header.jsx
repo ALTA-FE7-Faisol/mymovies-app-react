@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Button2 } from "./Button";
 
 export default class Header extends Component {
   render() {
@@ -17,9 +16,6 @@ export default class Header extends Component {
         >
           Favorites
         </a>
-        <div className="absolute top-0 right-0 text-stone-50">
-          <Button2 label="Dark Mode: on" />
-        </div>
       </nav>
     );
   }
