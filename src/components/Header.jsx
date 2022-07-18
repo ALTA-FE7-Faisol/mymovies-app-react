@@ -1,20 +1,43 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { IoSunny, IoMoon } from "react-icons/io5";
+
+import { ThemeContext } from "../utils/context";
 
 const Header = () => {
+  const { theme, setTheme } = useContext(ThemeContext);
+
+  const handleChangeTheme = (mode) => {
+    setTheme(mode);
+  };
+
   return (
-    <nav className="sticky top-0 w-full border-gray-200 sm:px-4 py-2.5 bg-stone-800">
-      <a
-        href="/"
-        className="font-medium px-3 py-2 text-stone-50 rounded-lg hover:bg-stone-50 hover:text-stone-800"
+    <nav className="sticky top-0 w-full sm:px-4 py-2.5 bg-sky-900 flex justify-between">
+      <Link
+        to="/"
+        className="font-medium px-3 py-2 text-white rounded-lg hover:bg-white hover:text-black"
       >
         Home
-      </a>
-      <a
-        href="/favorites"
-        className="font-medium px-3 py-2 text-stone-50 rounded-lg hover:bg-stone-50 hover:text-stone-800"
+      </Link>
+      {theme === "dark" ? (
+        <IoSunny
+          color="#fff"
+          size={30}
+          onClick={() => handleChangeTheme("light")}
+        />
+      ) : (
+        <IoMoon
+          color="#fff"
+          size={30}
+          onClick={() => handleChangeTheme("dark")}
+        />
+      )}
+      <Link
+        to="/favorites"
+        className="font-medium px-3 py-2 text-white rounded-lg hover:bg-white hover:text-black"
       >
         Favorites
-      </a>
+      </Link>
     </nav>
   );
 };
